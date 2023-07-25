@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "b7804989-e02f-4445-9d7f-964dba9c8f7b",
+		"name": "test agit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25142067"
+	},
+	"item": [
+		{
+			"name": "health",
+			"item": [
+				{
+					"name": "health",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "check db",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "book",
+			"item": [
+				{
+					"name": "get ALL data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/book/getData",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book",
+								"getData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get data by status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/book/getData",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book",
+								"getData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update status buku Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\":\"A0001\",\r\n    \"status\":0,\r\n    \"peminjam\": \"Donny\",\r\n    \"tanggalPinjam\": \"2022-10-13\",\r\n    \"tanggalKembali\": \"2022-10-20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/book/delete?bookId=A0001",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "bookId",
+									"value": "A0001"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Buku",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\":null,\r\n    \"judul\":\"Harry Potter dan Batu Bertuah\",\r\n    \"pengarang\":\"J.K Rowling\",\r\n    \"penerbit\":\"Gramedia\",\r\n    \"tanggalTerbit\":\"1997-06-28\",\r\n    \"tebalBuku\":\"384 halaman\",\r\n    \"status\":0,\r\n    \"peminjam\": null,\r\n    \"tanggalPinjam\": null,\r\n    \"tanggalKembali\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/book/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"bookId\":null,\r\n    \"judul\":\"Harry Potter dan Batu Bertuah\",\r\n    \"pengarang\":\"J.K Rowling\",\r\n    \"penerbit\":\"Gramedia\",\r\n    \"tanggalTerbit\":\"1997-06-28\",\r\n    \"tebalBuku\":\"384 halaman\",\r\n    \"status\":0,\r\n    \"peminjam\": null,\r\n    \"tanggalPinjam\": null,\r\n    \"tanggalKembali\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/book/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"book",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jul 2023 13:35:48 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"bookId\": \"A0001\",\n    \"judul\": \"Harry Potter dan Batu Bertuah\",\n    \"pengarang\": \"J.K Rowling\",\n    \"penerbit\": \"Gramedia\",\n    \"tanggalTerbit\": \"1997-06-28T00:00:00.000+00:00\",\n    \"tebalBuku\": \"384 halaman\",\n    \"status\": 0,\n    \"peminjam\": null,\n    \"tanggalPinjam\": null,\n    \"tanggalKembali\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "update status buku",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\":\"A0001\",\r\n    \"status\":0,\r\n    \"peminjam\": \"Donny\",\r\n    \"tanggalPinjam\": \"2022-10-13\",\r\n    \"tanggalKembali\": \"2022-10-20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/book/updateStatusBuku",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book",
+								"updateStatusBuku"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update buku",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\": \"A0001\",\r\n    \"judul\": \"Harry Potter dan Batu Bertuah\",\r\n    \"pengarang\": \"J.K Rowling\",\r\n    \"penerbit\": \"Pustaka Prima\",\r\n    \"tanggalTerbit\": \"1997-06-28T00:00:00.000+00:00\",\r\n    \"tebalBuku\": \"385 halaman\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/book/update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
